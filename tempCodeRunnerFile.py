@@ -1,0 +1,1 @@
+clock.get_time()
