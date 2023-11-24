@@ -31,7 +31,7 @@ def main():
                         play = False
                     else:
                         play = True
-                if event.key == pygame.K_RIGHT:
+                if event.key == pygame.K_RIGHT and play == False:
                     blockManager.Update(dt)       
         
         if play:
