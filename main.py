@@ -1,9 +1,6 @@
 import Global
-from Block import BlockManager
-import State
+import Menu
 import pygame
-from pygame.locals import *
-from pygame.math import Vector2
 
 def main():
 
@@ -11,13 +8,9 @@ def main():
     
     screen = pygame.display.set_mode((Global.SCREEN_WDITH, Global.SCREEN_HEIGHT))
     pygame.display.set_caption('Physics simulator')
-    
-    clock = pygame.time.Clock()
-    tickRate = 60     
 
-    blockManager = BlockManager()
+    menu = Menu.Menu()
 
-    play = True
     running = True
     while running: 
         dt = clock.get_time() / 1000
@@ -31,7 +24,7 @@ def main():
                         play = False
                     else:
                         play = True
-                if event.key == pygame.K_RIGHT and play == False:
+                if event.key == pygame.K_RIGHT:
                     blockManager.Update(dt)       
         
         if play:
